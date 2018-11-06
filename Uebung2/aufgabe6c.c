@@ -20,6 +20,6 @@ int main(void)
 double berechnen(double x)
 {
         double returnwert;
-        returnwert = abs(x) * sin(x) * pow(10.0, -2.0);
+        returnwert = fabs(x) * sin(x) * pow(10.0, -2.0);
         return returnwert;
 }
