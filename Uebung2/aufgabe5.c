@@ -10,9 +10,9 @@ int main (void)
 
         /*int a = ((7));
         int b = 101010;
-        int c = (5 ++ 4);
-        double d = (5 * 0.03);
-        double e = (2 + 5y);
+        int c = (5 ++ 4); */
+        double d = (5 * 0,03);
+        /*double e = (2 + 5y);
         double f = 4 - - 5;
         double g = 13.1 % 4;
         double g1 = 13 / 4 + 1;
@@ -24,11 +24,11 @@ int main (void)
         int g7 = printf("The Wire");
         int g8 = printf("Lost\n");
         int g9 = printf("%3i\n", 1 - 2);
-        double g10 = 2 * printf("The Sopranos %3i", 10000) - 3;*/
-        double g12 = scanf("Datum: %i.%i.%i", &x, &y, &z);
+        double g10 = 2 * printf("The Sopranos %3i", 10000) - 3;
+        double g12 = scanf("Datum: %i.%i.%i", &x, &y, &z);*/
         /*int g11 = scanf("%i", &x);
         getchar();*/
-        printf("%f", g12);
+        printf("%f", d);
 
         return 0;
 }

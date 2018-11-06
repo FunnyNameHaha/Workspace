@@ -19,7 +19,7 @@ int main(void)
         pruefen2 = isupper(zeichen2);
 
         summe = pruefen1 && pruefen2;
-        printf("Der Wert (0 -> falsch), (ungleich 0 -> wahr): %d", summe);
+        printf("Der Wert (wenn 0 -> falsch), (wenn ungleich 0 -> wahr): %d", summe);
 
         return 0;
 }
