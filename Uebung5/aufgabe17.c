@@ -32,6 +32,8 @@ int multiply(int a, int b) {
         int ergebnis = 0;
         int counter = a;
         int constant = a;
+        int i;
+        int j;
 
         while (b > 0) {
                 while (counter > 0) {
@@ -41,6 +43,12 @@ int multiply(int a, int b) {
                 counter = constant;
                 b--;
         }
+
+        for (i = 0; i < b; i++) {
+                for (j = 0; j < a; j++) {
+                        ergebnis++;
+                }
+         }
 
         return ergebnis;
 }
@@ -96,10 +104,12 @@ void print_triangle(int n) {
 double sinus(double x, int precision)
 {
 
-        int k = 1;
+        int k = 2;
+        int y;
+        y = x * (1.0 - (x * x) / (M_PI * M_PI));
 
-        while (k < precision) {
-                x = x * (1 - (x * x) / ((k * k) * (M_PI * M_PI)));
+        while (k <= precision) {
+                y = y * (1.0 - (x * x) / ((k * k) * (M_PI * M_PI)));
                 k++;
         }
 

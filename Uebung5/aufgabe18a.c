@@ -4,16 +4,14 @@ int read_digit(void);
 
 int main(void)
 {
-        int ergebnis;
+        int ergebnis = 0;
 
-        ergebnis = read_digit();
-
-        if (ergebnis != 0) {
-                printf("Der ASCII Code lautet: %d", ergebnis);
-                return 0;
+        while (ergebnis == 0) {
+                ergebnis = read_digit();
         }
 
-        return 1;
+        printf("Der ASCII Code lautet: %d", ergebnis);
+        return 0;
 }
 
 int read_digit(void)
@@ -22,9 +20,13 @@ int read_digit(void)
         printf("----------------------------------\n");
         char c = getchar();
 
-        if (getchar() != '\n' || c < '0' || c > '9') {
-                printf("ERROR - falsche Eingabe!");
+        if (getchar() != '\n' || c < '0' || c > '9' || c == '\n') {
+                printf("ERROR - falsche Eingabe!\n");
+                while (getchar() != '\n') {
+
+                }
                 return 0;
         }
+
         return c;
 }

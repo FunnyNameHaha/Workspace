@@ -10,6 +10,7 @@ int main(void)
 void strdel(char ct[], char c)
 {
         int i;
+        int j;
         int counter;
 
         for (i = 0; ct[i] != '\0'; i++) {
@@ -17,10 +18,11 @@ void strdel(char ct[], char c)
         }
         for (i = 0; ct[i] != '\0'; i++) {
                 if (ct[i] == c) {
-                        for (i; ct[i] != '\0'; i++) {
-                                c[i+1] = c[i];
+                        for (j = i; ct[j] != '\0'; j++) {
+                                c[j+1] = c[j];
                                 c[counter-1];
                         }
+                        i = i - 1;
                 }
         }
 }

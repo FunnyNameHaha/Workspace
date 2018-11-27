@@ -2,11 +2,15 @@
 
 int read_number(void);
 
+void clear (void);
+
 int main(void)
 {
-        int ergebnis;
+        int ergebnis = -1;
 
-        ergebnis = read_number();
+        while (ergebnis == -1) {
+                ergebnis = read_number();
+        }
 
         if (ergebnis != -1) {
                 printf("Die Zahl lautet: %d", ergebnis);
@@ -24,8 +28,17 @@ int read_number(void)
         scanf("%d", &eingabe);
 
         if (getchar() != '\n' || eingabe < 8 || eingabe > 40) {
-                printf("ERROR - falsche Eingabe!");
+                printf("ERROR - falsche Eingabe!\n");
+                printf("---------------------------------------------------\n");
+                clear();
                 return -1;
         }
         return eingabe;
+}
+
+void clear (void)
+{
+        char c;
+        while ((c = getchar()) != '\n' && c != EOF) {
+        }
 }

@@ -1,25 +1,42 @@
 #include <stdio.h>
+#include <ctype.h>
 
-p int ispalindrom(const char ct[]);
+int ispalindrom(const char ct[]);
 
 int main(void)
 {
+        int a;
+        a = ispalindrom("antna");
+        printf("%d", a);
 
+        return 0;
 }
 
 int ispalindrom(const char ct[]) {
 
         int i;
-        int counter;
+        int counter = 0;
         int max;
 
-        for (i = 0; ct[i] != '\n'; i++) {
+        for(i = 0; ct[i] != '\0'; i++) {
                 counter++;
         }
+        printf("%d\n", counter);
 
-        max = counter;
+        for(i = 0; i < counter; i++) {
+                if (!(isalpha(ct[i]))) {
+                        return 0;
+                }
+        }
+        printf("still here\n");
 
-        for (i = 0; i < counter / 2; i++, max--) {
+        max = counter-1;
+
+        printf("%d\n", max);
+
+        counter = counter / 2;
+
+        for(i = 0; i < counter - 1; i++, max--) {
                 if (ct[i] != ct[max]) {
                         return 0;
                 }

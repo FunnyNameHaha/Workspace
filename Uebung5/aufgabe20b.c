@@ -19,7 +19,7 @@ void my_strncat(char s[], const char ct[], int n)
                 countervonct++;
         }
         for (i = countervons; i < (countervons + countervonct); i++) {
-                for (j = 0; j < countervonct; i++)
+                for (j = 0; j < n; i++)
                 s[countervons] = ct[j];
         }
 

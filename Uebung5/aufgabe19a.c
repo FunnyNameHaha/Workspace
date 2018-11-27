@@ -5,6 +5,7 @@ void print_array(int w[], int n);
 int main(void)
 {
         int werte[6] = {1, 2, 4, 5, 6, 10};
+        
         print_array(werte, 3);
 
         return 0;

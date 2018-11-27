@@ -1,24 +1,20 @@
 #include <stdio.h>
 
-void berechnung(int a[], int s);
+void berechnung(int a[], int s, int n);
 
 int main(void)
 {
         int a[] = {0, 3, 8, 9, 13, 14, 15};
-        int s = 4;
-        berechnung(a, s);
+        int s = 16;
+        int n = 7;
+        berechnung(a, s, n);
 }
 
-void berechnung(int a[], int s)
+void berechnung(int a[], int s, int n)
 {
-        int i;
         int m;
         int li = 0;
-        int re = 1;
-
-        for (i = 0; a[i] != '\0'; i++) {
-                re++;
-        }
+        int re = n + 1;
 
         while (li < re - 1) {
                 m = (li + re)/2;
