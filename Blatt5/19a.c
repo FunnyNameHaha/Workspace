@@ -1,15 +1,5 @@
 #include <stdio.h>
 
-void print_array(int w[], int n);
-int main(void)
-{
-        int w[2];
-        w[0] = 3;
-        w[1] = 4;
-
-        print_array(w, 2);
-        return 0;
-}
 void print_array(int w[], int n)
 {
         int i;
