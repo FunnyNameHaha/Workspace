@@ -1,12 +1,8 @@
 #include <stdio.h>
-int orakel(void)
-{
-static int s = 0;
-return ++s;
-}
+#include <stdlib.h>
+
 int main(void)
 {
-orakel();
-printf("%i", orakel());
-return 0;
+char s[] = "ahahhahahahaha";
+sprintf(s, "%i", 12);
 }
