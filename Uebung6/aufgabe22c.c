@@ -12,5 +12,5 @@ int main(void)
 int cube()
 {
         srand(time(0));
-        return rand() % 7;
+        return rand() % 6 + 1;
 }
