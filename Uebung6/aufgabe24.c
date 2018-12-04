@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <ctype.h>
 
 void calc_occurrences(char s[], int occurrences[]);
 
@@ -19,6 +20,7 @@ int main(int argc, char * argv[])
         }
 
         while (i < argc) {
+                printf("Kommandozeilenparameter %d: %s\n", i, argv[i]);
                 calc_occurrences(argv[i], occurences);
                 i++;
         }
@@ -34,40 +36,41 @@ void calc_occurrences(char s[], int occurrences[])
         }
 
         for (i = 0; i < counter; i++) {
-                switch (s[i]) {
-                        case '0':
-                                occurrences[0]++;
-                                break;
-                        case '1':
-                                occurrences[1]++;
-                                break;
-                        case '2':
-                                occurrences[2]++;
-                                break;
-                        case '3':
-                                occurrences[3]++;
-                                break;
-                        case '4':
-                                occurrences[4]++;
-                                break;
-                        case '5':
-                                occurrences[5]++;
-                                break;
-                        case '6':
-                                occurrences[6]++;
-                                break;
-                        case '7':
-                                occurrences[7]++;
-                                break;
-                        case '8':
-                                occurrences[8]++;
-                                break;
-                        case '9':
-                                occurrences[9]++;
-                                break;
+                if (isdigit(s[i])) {
+                        switch (s[i]) {
+                                case '0':
+                                        occurrences[0]++;
+                                        break;
+                                case '1':
+                                        occurrences[1]++;
+                                        break;
+                                case '2':
+                                        occurrences[2]++;
+                                        break;
+                                case '3':
+                                        occurrences[3]++;
+                                        break;
+                                case '4':
+                                        occurrences[4]++;
+                                        break;
+                                case '5':
+                                        occurrences[5]++;
+                                        break;
+                                case '6':
+                                        occurrences[6]++;
+                                        break;
+                                case '7':
+                                        occurrences[7]++;
+                                        break;
+                                case '8':
+                                        occurrences[8]++;
+                                        break;
+                                case '9':
+                                        occurrences[9]++;
+                                        break;
+                        }
                 }
         }
-        printf("Zeichenfolge: %s\n", s);
         print_occurrences(occurrences);
 }
 

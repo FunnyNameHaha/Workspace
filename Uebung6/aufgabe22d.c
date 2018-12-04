@@ -6,7 +6,9 @@ char zufallszahl();
 
 int main(void)
 {
-        printf("%d", zufallszahl());
+        printf("%c", zufallszahl());
+
+        return 0;
 }
 
 char zufallszahl()
