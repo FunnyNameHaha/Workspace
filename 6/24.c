@@ -1,4 +1,4 @@
-#include <stdio.h>
+a#include <stdio.h>
 #include <ctype.h>
 
 void calc_occurrences(char s[], int occurrences[]);
