@@ -6,7 +6,7 @@
 int read_name(char input []);
 int main(void)
 {
-        char input[CHAR_MAX];
+        char input[CHAR_MAX+1];
         read_name(input);
         return 0;
 }
@@ -23,7 +23,7 @@ int read_name(char input[])
                                 printf("Nur Buchstaben\n");
                                 return 0;
                         }
-                        if (i > 0 &&isupper(c)) {
+                        if (i > 0 && isupper(c)) {
                                 printf("Mit Kleinbuchstaben fortsetzen\n");
                         }
                         input[i] = c;
