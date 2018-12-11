@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
-
+﻿#include <stdio.h>
 
 int flush_buff(void);
 int dutzend(void);
@@ -40,7 +37,7 @@ int dutzend(void)
 {
         int x;
         int value;
-        printf("Zahl zwischen eins und zwölf eingeben:\n");
+        printf("Zahl zwischen eins und zwoelf eingeben:\n");
         value = scanf("%d", &x);
 
         if (getchar() != '\n') {
