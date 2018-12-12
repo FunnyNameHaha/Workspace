@@ -40,13 +40,14 @@ int dutzend(void)
         printf("Zahl zwischen eins und zwoelf eingeben:\n");
         value = scanf("%d", &x);
 
-        if (getchar() != '\n') {
-                flush_buff();
-                return 14;
-        }
+
         if (value != 1 || x < 1 || x > 12) {
                 flush_buff();
                 return 13;
+        }
+        if (getchar() != '\n') {
+                flush_buff();
+                return 14;
         }
         return x;
 }
