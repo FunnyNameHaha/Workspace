@@ -1,14 +1,14 @@
 #include <stdio.h>
 
-char * strpbrk(const char *cs, const char *ct)
+char * strpbrk(const char *string, const char *search)
 {
         char *p;
         int a;
 
-        while ((a = *cs++) != '\0') {
-                for (p = ct; *p != '\0'; p++) {
+        while ((a = *string++) != '\0') {
+                for (p = search; *p != '\0'; p++) {
                         if (a == *p) {
-                                return (char *)(--cs);
+                                return (char *)(--string);
                         }
                 }
         }
@@ -18,7 +18,7 @@ char * strpbrk(const char *cs, const char *ct)
 int main(void)
 {
         char * test = "Hallo.";
-        char * trigger = "a";
+        char * trigger = "o.";
         char *p = strpbrk(test, trigger);
 
         if (p != NULL) {
