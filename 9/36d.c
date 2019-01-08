@@ -1,22 +1,16 @@
 #include <stdio.h>
 
-char * strpbrk(const char *string, const char *trigger)
+char * strpbrk(const char *cs, const char *ct)
 {
-        const char *result, *stringcopy, *triggercopy;
-        stringcopy = string;
-        triggercopy = trigger;
-        if (*trigger == '\0' || *string == '\0') {
-                return NULL;
-        }
-        while (*stringcopy != '\0') {
-                while (*triggercopy != '\0') {
-                        if (*stringcopy == *triggercopy) {
-                                result = stringcopy;
-                                return result;
+        char *p;
+        int a;
+
+        while ((a = *cs++) != '\0') {
+                for (p = ct; *p != '\0'; p++) {
+                        if (a == *p) {
+                                return (char *)(--cs);
                         }
-                        trigger++;
                 }
-                stringcopy++;
         }
         return NULL;
 }
@@ -24,11 +18,11 @@ char * strpbrk(const char *string, const char *trigger)
 int main(void)
 {
         char * test = "Hallo.";
-        char * trigger = "p";
+        char * trigger = "a";
         char *p = strpbrk(test, trigger);
 
         if (p != NULL) {
-                printf("Success!\n");
+                printf("%c", *p);
         } else {
                 printf("Failure!\n");
         }
