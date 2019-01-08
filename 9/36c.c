@@ -26,6 +26,17 @@ char *strrchr(char string[], char scan[])
         return result;
 }
 
+char *mystrrchr(char *cs, char c)
+{
+        char *result = NULL;
+        while (*(cs++) != '\n') {
+                if (*cs == c) {
+                        result = cs;
+                }
+        }
+        return result;
+}
+
 int main(void)
 {
         char input_1[] = "JodelJodelJooodel";
