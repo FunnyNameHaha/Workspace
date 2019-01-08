@@ -1,11 +1,11 @@
 #include <stdio.h>
 
-char *strrchr(const char *cs, int c)
+char *strrchr(const char *string, int search)
 {
         char *result = 0;
-        while (*cs++) {
-                if (*cs == (char)c) {
-                        result = cs;
+        while (*string++) {
+                if (*string == (char)search) {
+                        result = string;
                 }
         }
         return result;
@@ -14,7 +14,7 @@ char *strrchr(const char *cs, int c)
 int main(void)
 {
         char input_1[] = "JodelJodelJooodel";
-        char search = 'o';
+        char search = 'p';
         char *p = strrchr(input_1, search);
 
         if (p != NULL) {
