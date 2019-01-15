@@ -10,12 +10,12 @@ char *safecat(char *s, const char *ct)
         for (i = 0; s[i] != '\0'; i++) {}
         size += i;
 
-        p = realloc(s, size * sizeof(char));
+        s = (char*) realloc(s, size * sizeof(char));
         if (p == NULL) {
                 return NULL;
         }
-        s = p;
-        for (i = i + 1, j = 0; i < size; i++, j++) {
+        i++;
+        for (j = 0; i < size; i++, j++) {
                 s[i] = ct[j];
         }
         s[i+1] = '\0';

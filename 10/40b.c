@@ -13,5 +13,5 @@ void matrix_mult_vek(int A[][N], int x[], int b[], int n, int m)
 
 int main(void)
 {
-
+        
 }

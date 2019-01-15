@@ -3,7 +3,7 @@
 
 int *cpy_array(int v[], int size)
 {
-        int i, *p = NULL;
+        int i, *p;
         p = (int *) malloc(size * sizeof(int));
         if (p == NULL) {
                 return NULL;
@@ -18,7 +18,7 @@ int main(void)
 {
         int v[] = {7, 8, 9, 10};
         int i;
-        size_t size = sizeof(v)/sizeof(int);
+        int size = sizeof(v)/sizeof(int);
         int *result = cpy_array(v, size);
 
         if(result == NULL) {
@@ -28,13 +28,13 @@ int main(void)
         } else {
                 printf("\n~~Kopieren war erfolgreich~~\n");
                 for (i = 0; i < size; i++) {
-                        if (i+1 == size) {
+                        if ((i+1) == size) {
                                 printf("%i\n\n", *(result + i));
                         } else {
                                 printf("%i,", *(result + i));
                         }
-                        free(result);
                 }
+                free(result);
                 return 0;
         }
 }
