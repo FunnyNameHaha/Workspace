@@ -1,25 +1,27 @@
-#include <stdio.h>
+# include <stdio.h>
 
 int main(void)
 {
-        int result, **v, *x, *y, n = 7;
-        result = array_create(v, n);
-        if (!result) {
-                printf("Speicherfehler!\n");
+        int *v = NULL;
+        int n = 7;
+        int res;
+        int *x = v;
+        int *y = v + n;
+        if(array_create(&v, n) == '0'){
+                printf("Fehler");
                 return 1;
         }
-        result = array_create(v+n, n);
-        if (!result) {
-                printf("Speicherfehler!\n");
-                return 1;
+        if(array_create(&v + n, n) == '0'){
+                array_destroy(v);
+                printf("Fehler");
+                return 2;
         }
-        x = v[0];
-        y = v[n];
-        array_init(x, n);
-        array_init(y, n);
-        result = mult_array(x, y, n);
-        array_destroy(x);
-        array_destroy(y);
-        printf("Ergebnis: %i\n", result);
+        array_init(v, n);
+        array_init((v + n), n);
+        res = mult_array(x, y, n);
+        array_destroy(v);
+        array_destroy(v + n);
+        printf("Das Ergebnis ist: %d\n", res);
+
         return 0;
 }
