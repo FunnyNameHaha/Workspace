@@ -17,7 +17,7 @@ double my_frexp(double x, int *exponent)
 {
         int i;
         int count;
-        for(i = 0; fabs(x) > 0.5; i++) {
+        for(i = 0; fabs(x) >= 1; i++) {
                 x = x / 2;
                 count ++;
                 *exponent = count;
